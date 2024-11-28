@@ -1,22 +1,38 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    setError("");
+
     try {
-      const response = await axios.post("http://localhost:5000/api/login", {
-        email,
-        password,
-      });
+      const response = await axios.post(
+        "http://localhost:8081/api/auth/login",
+        {
+          email,
+          password,
+        }
+      );
       console.log(response.data);
+
+      localStorage.setItem("token", response.data.token);
+
+      navigate("/");
+
       alert("Login Successful!");
     } catch (err) {
       setError(err.response?.data?.message || "Something went wrong");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -27,7 +43,7 @@ const Login = () => {
         onSubmit={handleSubmit}
       >
         <h2 className="text-2xl font-bold text-center mb-4">Sign in</h2>
-        <h2 className="text-l  text-center mb-4">
+        <h2 className="text-l text-center mb-4">
           You can sign in using your Serene Stays account to access our
           services.
         </h2>
@@ -54,9 +70,10 @@ const Login = () => {
         </div>
         <button
           type="submit"
-          className="w-full bg-blue-600 text-white py-2 rounded-md"
+          className="w-full bg-blue-900 text-white py-2 rounded-md"
+          disabled={loading}
         >
-          Sign in
+          {loading ? "Signing in..." : "Sign in"}
         </button>
       </form>
     </div>

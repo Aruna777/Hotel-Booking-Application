@@ -9,14 +9,25 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5000/api/register", {
-        email,
-        password,
-      });
+      const response = await axios.post(
+        "http://localhost:8081/api/auth/register",
+        {
+          email,
+          password,
+        }
+      );
       console.log(response.data);
       alert("Registration Successful!");
     } catch (err) {
-      setError(err.response?.data?.message || "Something went wrong");
+      if (err.response) {
+        if (err.response.status === 400) {
+          setError(err.response.data);
+        } else {
+          setError("Something went wrong...");
+        }
+      } else {
+        setError("Something went wrong...");
+      }
     }
   };
 
@@ -50,7 +61,7 @@ const Register = () => {
         </div>
         <button
           type="submit"
-          className="w-full bg-blue-600 text-white py-2 rounded-md"
+          className="w-full bg-blue-900 text-white py-2 rounded-md"
         >
           Register
         </button>
