@@ -4,7 +4,7 @@ import logo from "../assets/logo.png";
 
 const Navbar = () => {
   return (
-    <nav className="bg-blue-900 py-4 shadow-md">
+    <nav className="bg-transparent py-4 ">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo and App Name */}
         <div className="flex items-center">
@@ -16,42 +16,42 @@ const Navbar = () => {
         <div className="flex space-x-4 mb-4">
           <Link
             to="/login"
-            className="px-4 py-2 bg-white text-blue-900 rounded-lg font-semibold hover:bg-blue-800 hover:text-white transition font-sans"
+            className="px-4 py-2 bg-white text-blue-900 rounded-lg font-semibold hover:bg-gray-800 hover:text-white transition font-sans"
           >
             Sign in
           </Link>
           <Link
             to="/register"
-            className="px-4 py-2 bg-white text-blue-900 rounded-lg font-semibold hover:bg-blue-800 hover:text-white transition font-sans"
+            className="px-4 py-2 bg-white text-blue-900 rounded-lg font-semibold hover:bg-gray-800 hover:text-white transition font-sans"
           >
             Register
           </Link>
         </div>
       </div>
 
-      <div className="bg-blue-900 py-1 mt-1">
+      <div className="bg-transparent py-1 mt-1">
         <div className="container mx-auto flex justify-center space-x-12 text-xl ">
           <Link
             to="/offers"
-            className="px-4 py-1 bg-blue-900 text-white rounded-lg font-semibold hover:bg-blue-800 hover:text-white transition font-sans"
+            className="px-4 py-1 bg-transparent text-white rounded-lg font-semibold hover:bg-gray-400 hover:text-white transition font-sans"
           >
             Explore
           </Link>
           <Link
             to="/meetings-events"
-            className="px-4 py-1 bg-blue-900 text-white rounded-lg font-semibold hover:bg-blue-800 hover:text-white transition font-sans"
+            className="px-4 py-1 bg-transparent text-white rounded-lg font-semibold hover:bg-gray-400 hover:text-white transition font-sans"
           >
             Meetings & Events
           </Link>
           <Link
             to="/explore"
-            className="px-4 py-1 bg-blue-900 text-white rounded-lg font-semibold hover:bg-blue-800 hover:text-white transition font-sans"
+            className="px-4 py-1 bg-transparent text-white rounded-lg font-semibold hover:bg-gray-400 hover:text-white transition font-sans"
           >
             Offers
           </Link>
           <Link
             to="/explore"
-            className="px-4 py-1 bg-blue-900 text-white rounded-lg font-semibold hover:bg-blue-800 hover:text-white transition font-sans"
+            className="px-4 py-1 bg-transparent text-white rounded-lg font-semibold hover:bg-gray-400 hover:text-white transition font-sans"
           >
             My Trips
           </Link>
