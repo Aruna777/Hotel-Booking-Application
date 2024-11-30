@@ -7,6 +7,8 @@ const Home = () => {
     rooms: 1,
   });
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [dates, setDates] = useState({ checkin: "", checkout: "" });
+  const [error, setError] = useState("");
 
   const handleGuestChange = (field, value) => {
     setGuestDetails((prev) => ({
@@ -19,18 +21,34 @@ const Home = () => {
     setIsDropdownOpen((prev) => !prev);
   };
 
+  const handleDateChange = (field, value) => {
+    setDates((prev) => {
+      const newDates = { ...prev, [field]: value };
+
+      if (
+        newDates.checkin &&
+        newDates.checkout &&
+        new Date(newDates.checkout) <= new Date(newDates.checkin)
+      ) {
+        setError("Check-out date must be after check-in date.");
+      } else {
+        setError("");
+      }
+
+      return newDates;
+    });
+  };
+
   return (
     <div className="flex items-center justify-center h-screen bg-transparent bg-opacity-50">
       <div className="flex flex-col items-center justify-center h-full w-full px-4 bg-transparent bg-opacity-50">
-        <p className="text-white text-5xl font-bold mb-8">
-          Welcome to Serene Stays
-        </p>
-        <div className="flex flex-wrap items-center justify-between bg-white rounded-lg shadow-lg p-6 gap-4 w-full max-w-6xl">
+        <p className="text-white text-5xl mb-8">Welcome to Serene Stays</p>
+        <div className="flex flex-wrap items-center justify-between bg-transparent m-4 shadow-lg p-6 gap-4 w-full max-w-6xl border border-white rounded-xl">
           {/* Destination Search */}
           <div className="flex flex-col">
             <label
               htmlFor="destination"
-              className="text-gray-700 font-medium mb-1"
+              className="text-white font-medium mb-1"
             >
               Destination
             </label>
@@ -43,37 +61,38 @@ const Home = () => {
           </div>
           {/* Check-in Date */}
           <div className="flex flex-col">
-            <label htmlFor="checkin" className="text-gray-700 font-medium mb-1">
+            <label htmlFor="checkin" className="text-white font-medium mb-1">
               Check-in
             </label>
             <input
               type="date"
               id="checkin"
+              value={dates.checkin}
+              onChange={(e) => handleDateChange("checkin", e.target.value)}
               className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
           {/* Check-out Date */}
           <div className="flex flex-col">
-            <label
-              htmlFor="checkout"
-              className="text-gray-700 font-medium mb-1"
-            >
+            <label htmlFor="checkout" className="text-white font-medium mb-1">
               Check-out
             </label>
             <input
               type="date"
               id="checkout"
+              value={dates.checkout}
+              onChange={(e) => handleDateChange("checkout", e.target.value)}
               className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
           {/* Guests and Rooms Dropdown */}
           <div className="relative">
-            <label htmlFor="guests" className="text-gray-700 font-medium mb-1">
+            <label htmlFor="guests" className="text-white font-medium mb-1">
               Guests & Rooms
             </label>
             <div
               onClick={toggleDropdown}
-              className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer"
+              className="border text-black bg-white border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer"
             >
               {guestDetails.adults} Adults, {guestDetails.children} Children,{" "}
               {guestDetails.rooms} Rooms
@@ -81,7 +100,7 @@ const Home = () => {
             {isDropdownOpen && (
               <div className="absolute bg-white border rounded-lg shadow-lg p-4 mt-2 z-10 w-64">
                 <div className="flex justify-between items-center mb-2">
-                  <span className="text-gray-700">Adults</span>
+                  <span className="text-black">Adults</span>
                   <input
                     type="number"
                     min="1"
@@ -93,7 +112,7 @@ const Home = () => {
                   />
                 </div>
                 <div className="flex justify-between items-center mb-2">
-                  <span className="text-gray-700">Children</span>
+                  <span className="text-black">Children</span>
                   <input
                     type="number"
                     min="0"
@@ -105,7 +124,7 @@ const Home = () => {
                   />
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-gray-700">Rooms</span>
+                  <span className="text-black">Rooms</span>
                   <input
                     type="number"
                     min="1"
@@ -121,7 +140,13 @@ const Home = () => {
           </div>
           {/* Search Button */}
           <div className="flex flex-col justify-end">
-            <button className="bg-blue-500 text-white font-bold px-6 py-2 rounded-lg hover:bg-blue-600 transition">
+            {error && (
+              <p className=" bg-white text-red-500 text-sm mb-2">{error}</p>
+            )}
+            <button
+              className="bg-blue-500 text-white font-bold px-6 py-2 rounded-lg hover:bg-blue-600 transition"
+              disabled={!!error || !dates.checkin || !dates.checkout}
+            >
               Search
             </button>
           </div>

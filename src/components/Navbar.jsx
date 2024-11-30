@@ -4,7 +4,7 @@ import logo from "../assets/logo.png";
 
 const Navbar = () => {
   return (
-    <nav className="bg-transparent py-4 ">
+    <nav className="bg-transparent py-4  border-b-2 border-gray-00">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo and App Name */}
         <div className="flex items-center">
