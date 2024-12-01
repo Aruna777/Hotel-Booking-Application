@@ -89,13 +89,11 @@ const Home = () => {
   };
 
   const handleClickOutside = (e) => {
-    // Close the dropdown if clicked outside
     if (!e.target.closest(".dropdown")) {
       setIsDropdownOpen(false);
     }
   };
 
-  // Add event listener for clicking outside the dropdown
   React.useEffect(() => {
     document.addEventListener("click", handleClickOutside);
     return () => {
@@ -104,12 +102,12 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="flex items-center justify-center h-screen bg-transparent bg-opacity-50">
+    <div className="flex items-center justify-center h-screen bg-transparent bg-opacity-50 mt-16">
       <div className="flex flex-col items-center justify-center h-full w-full px-4 bg-transparent bg-opacity-50">
-        <p className="text-white text-7xl mb-28 font-calligraphy ">
+        <p className="text-white text-7xl mb-8 font-calligraphy ">
           Where comfort meets tranquility
         </p>
-        <div className="flex flex-wrap items-center justify-between bg-transparent m-4 shadow-lg p-6 gap-4 w-full max-w-6xl border border-white rounded-xl">
+        <div className="flex flex-wrap items-center justify-between bg-transparent mt-16 m-4 mb-72 shadow-lg p-6 gap-4 w-full max-w-6xl border border-white rounded-xl">
           {/* Destination Search */}
           <div className="flex flex-col relative">
             <label
@@ -226,13 +224,57 @@ const Home = () => {
               <p className=" bg-white text-red-500 text-sm mb-2">{error}</p>
             )}
             <button
-              className="bg-blue-500 text-white font-bold px-6 py-2 rounded-lg hover:bg-blue-600 transition"
+              className="bg-gray-700 text-white font-bold px-6 py-2 rounded-lg hover:bg-gray-800 transition"
               disabled={
                 !!error || !dates.checkin || !dates.checkout || !destination
               }
             >
               Search
             </button>
+          </div>
+        </div>
+        {/* Additional Content */}
+        <div className="bg-gray-800 text-white w-full py-10 mt-auto">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div>
+                <h3 className="text-xl font-bold mb-4">Our Company</h3>
+                <ul className="space-y-2">
+                  <li>About Serene Stays</li>
+                  <li>Careers</li>
+                  <li>Investor Relations</li>
+                  <li>News</li>
+                  <li>CEO Tony Capuano’s Blog</li>
+                  <li>Our Stories</li>
+                  <li>Digital Accessibility</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold mb-4">Find Help</h3>
+                <ul className="space-y-2">
+                  <li>Help & Contact Us</li>
+                  <li>Look Up Reservation</li>
+                  <li>Global Reservation Phone Numbers</li>
+                  <li>Book Here, Benefit Now</li>
+                  <li>Best Rate Guarantee Form</li>
+                  <li>Missing Stay Form</li>
+                  <li>Site Map</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold mb-4">Top Destinations</h3>
+                <ul className="space-y-2">
+                  <li>Bahamas Hotels</li>
+                  <li>Boston Hotels</li>
+                  <li>Charleston Hotels</li>
+                  <li>Chicago Hotels</li>
+                  <li>Denver Hotels</li>
+                  <li>Island of Hawaii Hotels</li>
+                  <li>Las Vegas Hotels</li>
+                </ul>
+                <p className="mt-4 underline">View All Hotels</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
