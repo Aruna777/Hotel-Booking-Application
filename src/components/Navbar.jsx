@@ -33,25 +33,25 @@ const Navbar = () => {
         <div className="container mx-auto flex justify-center space-x-12 text-xl ">
           <Link
             to="/offers"
-            className="px-4 py-1 bg-transparent text-white rounded-lg font-semibold hover:bg-gray-400 hover:text-white transition font-sans"
+            className="px-4 py-1 bg-transparent text-white rounded-lg font-semibold hover:bg-gray-700 hover:text-white transition font-sans"
           >
             Explore
           </Link>
           <Link
             to="/meetings-events"
-            className="px-4 py-1 bg-transparent text-white rounded-lg font-semibold hover:bg-gray-400 hover:text-white transition font-sans"
+            className="px-4 py-1 bg-transparent text-white rounded-lg font-semibold hover:bg-gray-700 hover:text-white transition font-sans"
           >
             Meetings & Events
           </Link>
           <Link
             to="/explore"
-            className="px-4 py-1 bg-transparent text-white rounded-lg font-semibold hover:bg-gray-400 hover:text-white transition font-sans"
+            className="px-4 py-1 bg-transparent text-white rounded-lg font-semibold hover:bg-gray-700 hover:text-white transition font-sans"
           >
             Offers
           </Link>
           <Link
             to="/explore"
-            className="px-4 py-1 bg-transparent text-white rounded-lg font-semibold hover:bg-gray-400 hover:text-white transition font-sans"
+            className="px-4 py-1 bg-transparent text-white rounded-lg font-semibold hover:bg-gray-700 hover:text-white transition font-sans"
           >
             My Trips
           </Link>

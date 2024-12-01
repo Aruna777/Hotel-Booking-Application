@@ -5,6 +5,7 @@ module.exports = {
       fontFamily: {
         sans: ["Inter", "sans-serif"],
         serif: ["PT Serif", "serif"],
+        calligraphy: ["Dancing Script", "cursive"],
       },
     },
   },
