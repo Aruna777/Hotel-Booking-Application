@@ -302,7 +302,7 @@ const Home = () => {
                   <li>Careers</li>
                   <li>Investor Relations</li>
                   <li>News</li>
-                  <li>CEO Tony Capuano’s Blog</li>
+                  <li>CEO's Blog</li>
                   <li>Our Stories</li>
                   <li>Digital Accessibility</li>
                 </ul>

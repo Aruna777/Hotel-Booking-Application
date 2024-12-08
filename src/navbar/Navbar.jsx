@@ -32,7 +32,7 @@ const Navbar = () => {
       <div className="bg-transparent py-1 mt-1">
         <div className="container mx-auto flex justify-center space-x-12 text-xl ">
           <Link
-            to="/offers"
+            to="/explore"
             className="px-4 py-1 bg-transparent text-white rounded-lg font-semibold hover:bg-gray-700 hover:text-white transition font-sans"
           >
             Explore
@@ -44,7 +44,7 @@ const Navbar = () => {
             Meetings & Events
           </Link>
           <Link
-            to="/explore"
+            to="/offers"
             className="px-4 py-1 bg-transparent text-white rounded-lg font-semibold hover:bg-gray-700 hover:text-white transition font-sans"
           >
             Offers
