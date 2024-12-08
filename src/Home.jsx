@@ -13,31 +13,89 @@ const Home = () => {
   const [filteredCities, setFilteredCities] = useState([]);
 
   const cities = [
-    "New York",
-    "miami",
-    "orlando",
-    "maine",
-    "oregon",
-    "Los Angeles",
-    "Chicago",
-    "Houston",
+    "Birmingham",
+    "Montgomery",
+    "Anchorage",
     "Phoenix",
-    "Philadelphia",
-    "San Antonio",
-    "San Diego",
-    "Dallas",
-    "San Jose",
-    "Austin",
-    "Jacksonville",
-    "Fort Worth",
-    "Columbus",
+    "Fayetteville",
+    "Los Angeles",
     "San Francisco",
-    "Charlotte",
-    "Indianapolis",
-    "Seattle",
+    "San Diego",
+    "San Jose",
     "Denver",
-    "Washington",
+    "Boulder",
+    "Colorado Springs",
+    "Hartford",
+    "Newark",
+    "Wilmington",
+    "Miami",
+    "Orlando",
+    "Tampa",
+    "Atlanta",
+    "Savannah",
+    "Honolulu",
+    "Maui",
+    "Boise",
+    "Idaho Falls",
+    "Chicago",
+    "Naperville",
+    "Indianapolis",
+    "Davenport",
+    "Wichita",
+    "Overland Park",
+    "Louisville",
+    "Lexington",
+    "New Orleans",
+    "Portland",
+    "Baltimore",
     "Boston",
+    "Cambridge",
+    "Detroit",
+    "Minneapolis",
+    "Jackson",
+    "Kansas City,",
+    "St. Louis",
+    "Missoula",
+    "Omaha",
+    "Las Vegas",
+    "Manchester",
+    "Jersey City,",
+    "Atlantic City",
+    "Albuquerque",
+    "New York City",
+    "Buffalo",
+    "Albany",
+    "Charlotte",
+    "Raleigh",
+    "Fargo",
+    "Columbus",
+    "Cleveland",
+    "Cincinnati",
+    "Oklahoma City",
+    "Tulsa",
+    "Portland",
+    "Philadelphia",
+    "Pittsburgh",
+    "Providence",
+    "Newport",
+    "Charleston",
+    "Columbia",
+    "Sioux Falls",
+    "Nashville",
+    "Memphis",
+    "Houston",
+    "Austin",
+    "Dallas",
+    "Salt Lake City",
+    "Park City",
+    "Burlington",
+    "Richmond",
+    "Seattle",
+    "Tacoma",
+    "Charleston",
+    "Huntington",
+    "Madison",
+    "Casper",
   ];
 
   const handleGuestChange = (field, value) => {
@@ -75,7 +133,7 @@ const Home = () => {
 
     if (value) {
       const filtered = cities.filter((city) =>
-        city.toLowerCase().includes(value.toLowerCase())
+        city.toLowerCase().startsWith(value.toLowerCase())
       );
       setFilteredCities(filtered);
     } else {
@@ -125,7 +183,7 @@ const Home = () => {
               className="border border-gray-300 rounded-lg px-4 py-2 placeholder-black focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
             {filteredCities.length > 0 && (
-              <div className="absolute  text-black bg-white border rounded-lg shadow-lg mt-2 w-full max-w-xs z-50 overflow-y-auto">
+              <div className="absolute top-full left-0 mt-1 text-black bg-white border rounded-lg shadow-lg w-full max-w-xs z-50 overflow-y-auto">
                 {filteredCities.map((city, index) => (
                   <div
                     key={index}
