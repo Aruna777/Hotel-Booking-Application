@@ -6,9 +6,11 @@ import Navbar from "./navbar/Navbar";
 import Home from "./Home";
 import backgroundImage from "./assets/image.jpg";
 import OffersModal from "./navbar/OffersModal";
+import MeetingsEvents from "./navbar/MeetingsEvents";
 
 const App = () => {
   const [showOffersModal, setShowOffersModal] = useState(false);
+  const [showMeetingsEvents, setMeetingsEvents] = useState(false);
 
   return (
     <Router>
@@ -18,7 +20,10 @@ const App = () => {
           backgroundImage: `url(${backgroundImage})`,
         }}
       >
-        <Navbar setShowOffersModal={setShowOffersModal} />
+        <Navbar
+          setShowOffersModal={setShowOffersModal}
+          setMeetingsEvents={setMeetingsEvents}
+        />
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
@@ -27,6 +32,10 @@ const App = () => {
 
         {showOffersModal && (
           <OffersModal setShowOffersModal={setShowOffersModal} />
+        )}
+
+        {showMeetingsEvents && (
+          <MeetingsEvents setMeetingsEvents={setMeetingsEvents} />
         )}
       </div>
     </Router>
