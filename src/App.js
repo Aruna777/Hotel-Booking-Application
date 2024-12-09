@@ -7,10 +7,12 @@ import Home from "./Home";
 import backgroundImage from "./assets/image.jpg";
 import OffersModal from "./navbar/OffersModal";
 import MeetingsEvents from "./navbar/MeetingsEvents";
+import ExplorePage from "./navbar/ExplorePage";
 
 const App = () => {
   const [showOffersModal, setShowOffersModal] = useState(false);
   const [showMeetingsEvents, setMeetingsEvents] = useState(false);
+  const [showExplorePage, setExplorePage] = useState(false);
 
   return (
     <Router>
@@ -23,6 +25,7 @@ const App = () => {
         <Navbar
           setShowOffersModal={setShowOffersModal}
           setMeetingsEvents={setMeetingsEvents}
+          setExplorePage={setExplorePage}
         />
         <Routes>
           <Route path="/login" element={<Login />} />
@@ -37,6 +40,7 @@ const App = () => {
         {showMeetingsEvents && (
           <MeetingsEvents setMeetingsEvents={setMeetingsEvents} />
         )}
+        {showExplorePage && <ExplorePage setExplorePage={setExplorePage} />}
       </div>
     </Router>
   );

@@ -3,31 +3,30 @@ import React from "react";
 const MeetingsEvents = ({ setMeetingsEvents }) => {
   const Meetings = [
     {
-      title: "Meetings & Events Overview",
-      description:
-        "Great events start with a shared vision and careful planning.",
+      title: "Meetings & Events",
+      description: "Host extraordinary events in spaces designed to inspire.",
     },
     {
       title: "Business Meetings",
-      description: "Collaboration is the foundation of innovation and success.",
+      description: "Professional settings where ideas come to life.",
     },
     {
       title: "Weddings",
       description:
-        "Every love story is beautiful, but yours is our favorite to celebrate.",
+        "Celebrate your love story in a setting as special as your day.",
     },
     {
       title: "Social Events",
-      description: "Memories are made when friends and laughter come together.",
+      description: "Create memories worth celebrating with every gathering.",
     },
     {
       title: "Group Travel",
       description:
-        "The journey is as rewarding as the destination when shared with others.",
+        "Travel together, stay together, and create lasting memories.",
     },
     {
       title: "Conference Room",
-      description: "A room filled with ideas is a room full of possibilities.",
+      description: "Empowering success with state-of-the-art meeting spaces.",
     },
   ];
 
