@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./navbar/Login";
 import Register from "./navbar/Register";
 import Navbar from "./navbar/Navbar";
 import Home from "./Home";
 import backgroundImage from "./assets/image.jpg";
-import OffersPage from "./navbar/OffersPage";
+import OffersModal from "./navbar/OffersModal";
 
 const App = () => {
+  const [showOffersModal, setShowOffersModal] = useState(false);
+
   return (
     <Router>
       <div
@@ -16,13 +18,16 @@ const App = () => {
           backgroundImage: `url(${backgroundImage})`,
         }}
       >
-        <Navbar />
+        <Navbar setShowOffersModal={setShowOffersModal} />
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/" element={<Home />} />
-          <Route path="/offers" element={<OffersPage />} />
         </Routes>
+
+        {showOffersModal && (
+          <OffersModal setShowOffersModal={setShowOffersModal} />
+        )}
       </div>
     </Router>
   );

@@ -2,9 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 
-const Navbar = () => {
+const Navbar = ({ setShowOffersModal }) => {
   return (
-    <nav className="bg-transparent py-4  border-b-2 border-gray-00">
+    <nav className="bg-transparent py-4 border-b-2 border-gray-00">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo and App Name */}
         <div className="flex items-center">
@@ -43,14 +43,14 @@ const Navbar = () => {
           >
             Meetings & Events
           </Link>
-          <Link
-            to="/offers"
+          <button
+            onClick={() => setShowOffersModal(true)}
             className="px-4 py-1 bg-transparent text-white rounded-lg font-semibold hover:bg-gray-700 hover:text-white transition font-sans"
           >
             Offers
-          </Link>
+          </button>
           <Link
-            to="/explore"
+            to="/my-trips"
             className="px-4 py-1 bg-transparent text-white rounded-lg font-semibold hover:bg-gray-700 hover:text-white transition font-sans"
           >
             My Trips

@@ -161,11 +161,11 @@ const Home = () => {
 
   return (
     <div className="flex items-center justify-center h-screen bg-transparent bg-opacity-50 mt-16">
-      <div className="flex flex-col items-center justify-center h-full w-full px-4 bg-transparent bg-opacity-50">
+      <div className="flex flex-col flex-grow items-center justify-center h-full w-full px-4 bg-transparent bg-opacity-50">
         <p className="text-white text-7xl mb-8 font-calligraphy ">
           Where comfort meets tranquility
         </p>
-        <div className="flex flex-wrap items-center justify-between bg-transparent mt-16 m-4 mb-72 shadow-lg p-6 gap-4 w-full max-w-6xl border border-white rounded-xl">
+        <div className="flex flex-wrap items-center justify-between bg-transparent mt-auto m-4 mb-72 shadow-lg p-6 gap-4 w-full max-w-6xl border border-white rounded-xl">
           {/* Destination Search */}
           <div className="flex flex-col relative">
             <label
