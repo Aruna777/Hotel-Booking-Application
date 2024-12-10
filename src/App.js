@@ -8,11 +8,13 @@ import backgroundImage from "./assets/image.jpg";
 import OffersModal from "./navbar/OffersModal";
 import MeetingsEvents from "./navbar/MeetingsEvents";
 import ExplorePage from "./navbar/ExplorePage";
+import MyTripsPage from "./navbar/MyTripsPage";
 
 const App = () => {
   const [showOffersModal, setShowOffersModal] = useState(false);
   const [showMeetingsEvents, setMeetingsEvents] = useState(false);
   const [showExplorePage, setExplorePage] = useState(false);
+  const [showMyTripsPage, setMyTripsPage] = useState(false);
 
   return (
     <Router>
@@ -26,6 +28,7 @@ const App = () => {
           setShowOffersModal={setShowOffersModal}
           setMeetingsEvents={setMeetingsEvents}
           setExplorePage={setExplorePage}
+          setMyTripsPage={setMyTripsPage}
         />
         <Routes>
           <Route path="/login" element={<Login />} />
@@ -41,6 +44,7 @@ const App = () => {
           <MeetingsEvents setMeetingsEvents={setMeetingsEvents} />
         )}
         {showExplorePage && <ExplorePage setExplorePage={setExplorePage} />}
+        {showMyTripsPage && <MyTripsPage setMyTripsPage={setMyTripsPage} />}
       </div>
     </Router>
   );

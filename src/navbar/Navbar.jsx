@@ -3,7 +3,12 @@ import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 import { useLocation } from "react-router-dom";
 
-const Navbar = ({ setShowOffersModal, setMeetingsEvents, setExplorePage }) => {
+const Navbar = ({
+  setShowOffersModal,
+  setMeetingsEvents,
+  setExplorePage,
+  setMyTripsPage,
+}) => {
   const location = useLocation();
   const isAuthPage =
     location.pathname === "/login" || location.pathname === "/register";
@@ -59,12 +64,12 @@ const Navbar = ({ setShowOffersModal, setMeetingsEvents, setExplorePage }) => {
             >
               Offers
             </button>
-            <Link
-              to="/my-trips"
+            <button
+              onClick={() => setMyTripsPage(true)}
               className="px-4 py-1 bg-transparent text-white rounded-lg font-semibold hover:bg-gray-700 hover:text-white transition font-sans"
             >
               My Trips
-            </Link>
+            </button>
           </div>
         </div>
       )}
