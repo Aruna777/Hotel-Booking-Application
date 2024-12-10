@@ -16,7 +16,8 @@ const MyTripsPage = ({ setMyTripsPage }) => {
       <div className="bg-white rounded-lg shadow-lg w-11/12 md:w-2/3 lg:w-1/2 p-6 relative">
         {/* Close Button */}
         <button
-          className="absolute top-4 right-4 text-gray-500 hover:text-gray-800"
+          className="absolute top-4 right-4 text-gray-500 hover:text-
+          gray-800"
           onClick={() => setMyTripsPage(false)}
         >
           ✖
@@ -126,14 +127,7 @@ const MyTripsPage = ({ setMyTripsPage }) => {
                 {loading ? "Signing in..." : "Sign In"}
               </button>
             </form>
-            <div className="mt-4 flex justify-between items-center">
-              <a
-                href="#"
-                className="text-blue-600 hover:underline text-sm font-medium"
-              >
-                Forgot password
-              </a>
-            </div>
+            <div className="mt-4 flex justify-between items-center"></div>
           </div>
         </div>
       </div>
