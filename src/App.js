@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./navbar/Login";
 import Register from "./navbar/Register";
 import Navbar from "./navbar/Navbar";
-import Home from "./Home";
+import Home from "./Home/Home";
 import backgroundImage from "./assets/image.jpg";
 import OffersModal from "./navbar/OffersModal";
 import MeetingsEvents from "./navbar/MeetingsEvents";
@@ -18,10 +18,14 @@ const App = () => {
 
   return (
     <Router>
+      {/* <div className="bg-white"> */}
       <div
         className="min-h-screen bg-cover bg-center"
         style={{
           backgroundImage: `url(${backgroundImage})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center center",
+          backgroundAttachment: "fixed",
         }}
       >
         <Navbar

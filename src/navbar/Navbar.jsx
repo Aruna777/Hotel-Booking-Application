@@ -14,7 +14,7 @@ const Navbar = ({
     location.pathname === "/login" || location.pathname === "/register";
 
   return (
-    <nav className="bg-transparent py-4 border-b-2 border-gray-300">
+    <nav className="bg-transparent py-4 border-b border-gray-100">
       <div className="container mx-auto flex flex-wrap justify-between items-center px-4">
         {/* Logo and App Name */}
         <div className="flex items-center">
@@ -28,13 +28,13 @@ const Navbar = ({
           <div className="flex space-x-2 sm:space-x-4">
             <Link
               to="/login"
-              className="px-2 sm:px-4 py-1 sm:py-2 bg-white text-blue-900 rounded-lg font-semibold hover:bg-gray-800 hover:text-white transition font-sans"
+              className="px-2 sm:px-4 py-1 sm:py-2 bg-white text-blue-900 rounded-lg font-semibold hover:bg-gray-900 hover:text-white transition font-sans"
             >
               Sign in
             </Link>
             <Link
               to="/register"
-              className="px-2 sm:px-4 py-1 sm:py-2 bg-white text-blue-900 rounded-lg font-semibold hover:bg-gray-800 hover:text-white transition font-sans"
+              className="px-2 sm:px-4 py-1 sm:py-2 bg-white text-blue-900 rounded-lg font-semibold hover:bg-gray-900 hover:text-white transition font-sans"
             >
               Register
             </Link>
@@ -48,25 +48,25 @@ const Navbar = ({
           <div className="container mx-auto flex sm:flex-row justify-center space-y-2 sm:space-y-0 sm:space-x-12 text-xl">
             <button
               onClick={() => setExplorePage(true)}
-              className="px-4 py-2bg-transparent text-white rounded-lg font-semibold hover:bg-gray-700 hover:text-white transition font-sans"
+              className="px-4 py-2bg-transparent text-white rounded-lg font-semibold hover:bg-gray-900 hover:text-white transition font-sans"
             >
               Explore
             </button>
             <button
               onClick={() => setMeetingsEvents(true)}
-              className="px-4 py-2 bg-transparent text-white rounded-lg font-semibold hover:bg-gray-700 hover:text-white transition font-sans"
+              className="px-4 py-2 bg-transparent text-white rounded-lg font-semibold hover:bg-gray-900 hover:text-white transition font-sans"
             >
               Meetings & Events
             </button>
             <button
               onClick={() => setShowOffersModal(true)}
-              className="px-4 py-2 bg-transparent text-white rounded-lg font-semibold hover:bg-gray-700 hover:text-white transition font-sans"
+              className="px-4 py-2 bg-transparent text-white rounded-lg font-semibold hover:bg-gray-900 hover:text-white transition font-sans"
             >
               Offers
             </button>
             <button
               onClick={() => setMyTripsPage(true)}
-              className="px-4 py-2 bg-transparent text-white rounded-lg font-semibold hover:bg-gray-700 hover:text-white transition font-sans"
+              className="px-4 py-2 bg-transparent text-white rounded-lg font-semibold hover:bg-gray-900 hover:text-white transition font-sans"
             >
               My Trips
             </button>

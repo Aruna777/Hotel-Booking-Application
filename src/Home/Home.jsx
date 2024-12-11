@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import TrendingDestinations from "./TrendingDestinations";
 
 const Home = () => {
   const [guestDetails, setGuestDetails] = useState({
@@ -46,7 +47,6 @@ const Home = () => {
     "Louisville",
     "Lexington",
     "New Orleans",
-    "Portland",
     "Baltimore",
     "Boston",
     "Cambridge",
@@ -78,7 +78,6 @@ const Home = () => {
     "Pittsburgh",
     "Providence",
     "Newport",
-    "Charleston",
     "Columbia",
     "Sioux Falls",
     "Nashville",
@@ -161,13 +160,13 @@ const Home = () => {
 
   return (
     <div className="flex flex-col items-center justify-center  min-h-screen  bg-transparent  h-full px-4 pt-16 sm:pt-20 md:pt-24 ">
-      <p className="text-white text-4xl sm:text-3xl md:text-5xl lg:text-7xl mb-8 font-calligraphy text-center">
-        Where comfort meets tranquility
+      <p className="text-white text-4xl sm:text-3xl md:text-5xl lg:text-4xl mb-6 font-bold text-center">
+        Search Your Stays
       </p>
-      <div className="flex flex-wrap items-center justify-between bg-transparent mt-auto m-4 shadow-lg p-6 gap-4 w-full max-w-6xl border border-white rounded-xl ">
+      <div className="flex flex-wrap items-center justify-between bg-white mt-auto m-4 shadow-lg shadow-gray p-6 gap-4 w-full max-w-6xl border border-gray-800 rounded-xl ">
         {/* Destination Search */}
         <div className="flex flex-col relative w-full sm:w-1/2 lg:w-1/3">
-          <label htmlFor="destination" className="text-white font-medium mb-1">
+          <label htmlFor="destination" className="text-black font-medium mb-1 ">
             Destination
           </label>
           <input
@@ -196,7 +195,7 @@ const Home = () => {
         {/* Check-in Date */}
         <div className="flex flex-wrap gap-4 w-full sm:w-auto">
           <div className="flex flex-col">
-            <label htmlFor="checkin" className="text-white font-medium mb-1">
+            <label htmlFor="checkin" className="text-black font-medium mb-1">
               Check-in
             </label>
             <input
@@ -209,7 +208,7 @@ const Home = () => {
           </div>
           {/* Check-out Date */}
           <div className="flex flex-col ">
-            <label htmlFor="checkout" className="text-white font-medium mb-1">
+            <label htmlFor="checkout" className="text-black font-medium mb-1">
               Check-out
             </label>
             <input
@@ -223,7 +222,7 @@ const Home = () => {
         </div>
         {/* Guests and Rooms Dropdown */}
         <div className="relative dropdown w-full sm:w-auto">
-          <label htmlFor="guests" className="text-white font-medium mb-1">
+          <label htmlFor="guests" className="text-black font-medium mb-1">
             Guests & Rooms
           </label>
           <div
@@ -285,6 +284,8 @@ const Home = () => {
           </button>
         </div>
       </div>
+      {/* Trending Destinations Section */}
+      <TrendingDestinations />
 
       {/* Additional Content */}
       <div className="bg-gray-800 text-white w-full py-10 mt-64">
