@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { Link } from "react-router-dom";
 import apartments from "../assets/apartments.jpg";
 import cabins from "../assets/cabins.jpg";
 import hotels from "../assets/hotels.jpg";
@@ -11,26 +12,30 @@ import motels from "../assets/motels.jpg";
 
 const SearchByProperty = () => {
   const propertyTypes = [
-    { name: "Hotels", image: hotels },
+    { name: "Hotels", image: hotels, link: "/hotels" },
     {
       name: "Apartments",
       image: apartments,
+      link: "/apartments",
     },
-    { name: "Resorts", image: resorts },
-    { name: "Cabins", image: cabins },
-    { name: "Villas", image: villas },
+    { name: "Resorts", image: resorts, link: "/resorts" },
+    { name: "Cabins", image: cabins, link: "/cabins" },
+    { name: "Villas", image: villas, link: "/villas" },
     {
       name: "Guest Houses",
       image: guesthouses,
+      link: "/guesthouses",
     },
-    { name: "Motels", image: motels },
+    { name: "Motels", image: motels, link: "/motels" },
     {
       name: "Luxury Tents",
       image: luxurytents,
+      link: "/luxurytents",
     },
     {
       name: "Farm Stays",
       image: farmstays,
+      link: "/farmstays",
     },
   ];
 
@@ -72,14 +77,16 @@ const SearchByProperty = () => {
               key={index}
               className="flex-none w-56 h-72 bg-gray-100 rounded-lg shadow-md overflow-hidden hover:scale-105 transition transform duration-200"
             >
-              <img
-                src={type.image}
-                alt={type.name}
-                className="w-full h-56 object-cover"
-              />
-              <div className="text-center text-lg font-semibold text-gray-800 p-2">
-                {type.name}
-              </div>
+              <Link to={type.link} className="block w-full h-full">
+                <img
+                  src={type.image}
+                  alt={type.name}
+                  className="w-full h-56 object-cover"
+                />
+                <div className="text-center text-lg font-semibold text-gray-800 p-2">
+                  {type.name}
+                </div>
+              </Link>
             </div>
           ))}
         </div>
