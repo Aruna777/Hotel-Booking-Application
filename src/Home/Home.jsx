@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import TrendingDestinations from "./TrendingDestinations";
 import { cities } from "./cities";
+import SearchByProperty from "./SearchByProperty";
 
 const Home = () => {
   const [guestDetails, setGuestDetails] = useState({
@@ -203,6 +204,9 @@ const Home = () => {
       </div>
       {/* Trending Destinations Section */}
       <TrendingDestinations />
+
+      {/* Search By Property Section */}
+      <SearchByProperty />
 
       {/* Additional Content */}
       <div className="bg-gray-800 text-white w-full py-10 mt-64">
