@@ -12,7 +12,7 @@ import motels from "../assets/motels.jpg";
 
 const SearchByProperty = () => {
   const propertyTypes = [
-    { name: "Hotels", image: hotels, link: "/hotels" },
+    { name: "Hotels", image: hotels, link: "/hotelsPage" },
     {
       name: "Apartments",
       image: apartments,
