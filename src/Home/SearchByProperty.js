@@ -77,7 +77,7 @@ const SearchByProperty = () => {
                 alt={type.name}
                 className="w-full h-56 object-cover"
               />
-              <div className="text-center text-lg font-medium p-2">
+              <div className="text-center text-lg font-semibold text-gray-800 p-2">
                 {type.name}
               </div>
             </div>
