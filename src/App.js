@@ -18,6 +18,11 @@ import Villas from "./Home/properties/Villas";
 import GuestHouses from "./Home/properties/GuestHouses";
 import Motels from "./Home/properties/Motels";
 import LuxuryTents from "./Home/properties/LuxuruyTents";
+import Newyork from "./Home/destinations/Newyork";
+import Miami from "./Home/destinations/Miami";
+import Lasvegas from "./Home/destinations/Lasvegas";
+import Losangeles from "./Home/destinations/Losangeles";
+import Chicago from "./Home/destinations/Chicago";
 
 const App = () => {
   const [showOffersModal, setShowOffersModal] = useState(false);
@@ -56,6 +61,11 @@ const App = () => {
           <Route path="/guesthouses" element={<GuestHouses />} />
           <Route path="/Luxurytents" element={<LuxuryTents />} />
           <Route path="/farmstays" element={<Farmstays />} />
+          <Route path="/nyc" element={<Newyork />} />
+          <Route path="/miami" element={<Miami />} />
+          <Route path="/lasvegas" element={<Lasvegas />} />
+          <Route path="/losangeles" element={<Losangeles />} />
+          <Route path="/chicago" element={<Chicago />} />
         </Routes>
 
         {showOffersModal && (
