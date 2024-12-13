@@ -11,6 +11,7 @@ const Apartments = () => {
   const [dates, setDates] = useState({ checkin: "", checkout: "" });
   const [error, setError] = useState("");
   const [destination, setDestination] = useState("");
+
   return (
     <div className="flex flex-col items-center justify-center  bg-transparent h-full px-4 pt-16 sm:pt-20 md:pt-24">
       <p className="text-white text-4xl sm:text-3xl md:text-5xl lg:text-4xl mb-6 font-bold text-center">
