@@ -4,29 +4,35 @@ import NewYork from "../assets/newyork.jpg";
 import Chicago from "../assets/chicago.jpg";
 import LosAngeles from "../assets/losangeles.jpg";
 import LasVegas from "../assets/lasvegas.jpg";
+import { Link } from "react-router-dom";
 
 const TrendingDestinations = () => {
   const destinations = [
     {
       name: "New York City",
       image: NewYork,
+      link: "/nyc",
     },
     {
       name: "Miami",
       image: Miami,
+      link: "/miami",
     },
 
     {
       name: "Las Vegas",
       image: LasVegas,
+      link: "/lasvegas",
     },
     {
       name: "Los Angeles",
       image: LosAngeles,
+      link: "/losangeles",
     },
     {
       name: "Chicago",
       image: Chicago,
+      link: "/chicago",
     },
   ];
 
@@ -45,16 +51,19 @@ const TrendingDestinations = () => {
               key={index}
               className="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300"
             >
-              <img
-                src={destination.image}
-                alt={destination.name}
-                className="w-full h-64 object-cover"
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-800">
-                  {destination.name}
-                </h3>
-              </div>
+              <Link to={destination.link} className="block w-full h-full">
+                <img
+                  src={destination.image}
+                  alt={destination.name}
+                  className="w-full h-64 object-cover"
+                />
+
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-gray-800">
+                    {destination.name}
+                  </h3>
+                </div>
+              </Link>
             </div>
           ))}
         </div>
@@ -64,16 +73,18 @@ const TrendingDestinations = () => {
               key={index}
               className="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300"
             >
-              <img
-                src={destination.image}
-                alt={destination.name}
-                className="w-full h-64 object-cover"
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-800">
-                  {destination.name}
-                </h3>
-              </div>
+              <Link to={destination.link} className="block w-full h-full">
+                <img
+                  src={destination.image}
+                  alt={destination.name}
+                  className="w-full h-64 object-cover"
+                />
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-gray-800">
+                    {destination.name}
+                  </h3>
+                </div>
+              </Link>
             </div>
           ))}
         </div>
