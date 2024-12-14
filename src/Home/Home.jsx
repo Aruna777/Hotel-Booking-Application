@@ -14,24 +14,35 @@ const Home = () => {
   const [destination, setDestination] = useState("");
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-transparent h-full px-4 pt-16 sm:pt-20 md:pt-24">
-      <p className="text-white text-4xl sm:text-3xl md:text-5xl lg:text-4xl mb-6 font-bold text-center">
+    <div className="flex flex-col items-center justify-center pt-24">
+      {/* <div
+        className=" justify-center w-full max-w-full h-screen rounded-lg overflow-hidden bg-cover bg-center shadow-lg"
+        style={{
+          backgroundImage: `url(${backgroundImage})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center center",
+        }}
+      > */}
+      <p className="text-blue-950 text-4xl sm:text-3xl md:text-5xl lg:text-4xl mb-6 font-bold text-center">
         Search Your Stays
       </p>
-      <p className="text-white text-center text-2xl mb-10">
+      <p className="text-blue-950 text-center text-2xl mb-10">
         From cozy bed & breakfast to luxury hotels
       </p>
+      <div className="p-6 sm:p-8 md:p-10">
+        <SearchForm
+          guestDetails={guestDetails}
+          setGuestDetails={setGuestDetails}
+          dates={dates}
+          setDates={setDates}
+          destination={destination}
+          setDestination={setDestination}
+          error={error}
+          setError={setError}
+        />
+      </div>
+      {/* </div> */}
 
-      <SearchForm
-        guestDetails={guestDetails}
-        setGuestDetails={setGuestDetails}
-        dates={dates}
-        setDates={setDates}
-        destination={destination}
-        setDestination={setDestination}
-        error={error}
-        setError={setError}
-      />
       {/* Trending Destinations Section */}
       <TrendingDestinations />
 

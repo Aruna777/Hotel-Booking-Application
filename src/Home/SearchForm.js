@@ -63,8 +63,9 @@ const SearchForm = ({
   };
 
   return (
-    <div className="flex flex-wrap items-center justify-between bg-gray-50 mt-auto m-4 shadow-lg shadow-gray p-6 gap-4 w-full max-w-6xl border border-gray-800 rounded-xl">
+    <div className="flex flex-wrap items-center justify-between bg-neutral-300 mt-auto m-4 shadow-lg shadow-gray p-6 gap-4 w-full max-w-6xl border border-gray-800 rounded-xl">
       {/* Destination Search */}
+
       <div className="flex flex-col relative w-full sm:w-1/2 lg:w-1/3">
         <label htmlFor="destination" className="text-black font-medium mb-1 ">
           Destination
@@ -174,7 +175,7 @@ const SearchForm = ({
           <p className=" bg-white text-red-500 text-sm mb-2">{error}</p>
         )}
         <button
-          className="bg-gray-700 text-white font-bold px-6 py-2 rounded-lg hover:bg-gray-800 transition "
+          className="bg-blue-950 text-white font-bold px-6 py-2 rounded-lg hover:bg-gray-800 transition "
           disabled={
             !!error || !dates.checkin || !dates.checkout || !destination
           }

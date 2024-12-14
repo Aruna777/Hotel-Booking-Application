@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./navbar/Navbar";
 
-import backgroundImage from "./assets/image.jpg";
 import OffersModal from "./navbar/OffersModal";
 import MeetingsEvents from "./navbar/MeetingsEvents";
 import ExplorePage from "./navbar/ExplorePage";
@@ -17,8 +16,9 @@ const App = () => {
 
   return (
     <Router>
-      {/* <div className="bg-white"> */}
-      <div
+      <div className="bg-neutral-300">
+        {/* <div className="bg-gradient-to-r from-gray-100 to-gray-300"> */}
+        {/* <div
         className="min-h-screen bg-cover bg-center"
         style={{
           backgroundImage: `url(${backgroundImage})`,
@@ -26,7 +26,7 @@ const App = () => {
           backgroundPosition: "center center",
           backgroundAttachment: "fixed",
         }}
-      >
+      > */}
         <Navbar
           setShowOffersModal={setShowOffersModal}
           setMeetingsEvents={setMeetingsEvents}

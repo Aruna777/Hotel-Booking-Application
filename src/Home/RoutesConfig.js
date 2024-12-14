@@ -1,6 +1,7 @@
 import Login from "../navbar/Login";
 import Register from "../navbar/Register";
 import Home from "./Home";
+
 import Chicago from "./destinations/Chicago";
 import Lasvegas from "./destinations/Lasvegas";
 import Losangeles from "./destinations/Losangeles";

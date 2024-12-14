@@ -39,10 +39,10 @@ const TrendingDestinations = () => {
   return (
     <section className="py-10 bg-transparent">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-white mb-6 text-center">
+        <h2 className="text-4xl font-bold text-blue-950  mb-6 text-center">
           Trending Destinations
         </h2>
-        <p className="text-white text-center text-2xl mb-10">
+        <p className="text-blue-950  text-center text-2xl mb-10">
           Most popular choices for travelers from the United States
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -80,7 +80,7 @@ const TrendingDestinations = () => {
                   className="w-full h-64 object-cover"
                 />
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-800">
+                  <h3 className="text-xl font-semibold text-blue-950">
                     {destination.name}
                   </h3>
                 </div>

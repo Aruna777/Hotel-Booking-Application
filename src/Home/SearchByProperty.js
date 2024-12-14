@@ -55,7 +55,7 @@ const SearchByProperty = () => {
 
   return (
     <div className=" container my-8">
-      <h2 className=" text-white text-center text-4xl font-bold mb-4">
+      <h2 className=" text-blue-950  text-center text-4xl font-bold mb-4">
         Search by Property Type
       </h2>
       <div className="relative">
@@ -83,7 +83,7 @@ const SearchByProperty = () => {
                   alt={type.name}
                   className="w-full h-56 object-cover"
                 />
-                <div className="text-center text-lg font-semibold text-gray-800 p-2">
+                <div className="text-center text-lg font-semibold text-blue-950 p-2">
                   {type.name}
                 </div>
               </Link>
